@@ -4,6 +4,9 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 
 export function* helloSaga() {
   yield console.log('Hello Sagas!');
+  yield console.log(
+    'We can set up more functionaility here as this runs on INIT rather than having a watcher.'
+  );
 }
 
 function* incrementAsync() {
