@@ -1,3 +1,12 @@
-In this lesson we use the randomuser api to get users.
+3
 
-We set up our saga to listen for INCREMENT_ASYNC where we have added the getFetchData request to the asyn counter button.
+We will install Redux Dev Tools
+
+Add Redux Dev Tools Chrome extension https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en or search for Chrome Redux Dev Tools extension
+
+1. npm install -D redux-devtools-extension
+2. add import { composeWithDevTools } from 'redux-devtools-extension';
+3. Replace const store = ... with
+   const store = createStore(reducer,composeWithDevTools(applyMiddleware(sagaMiddleware)));
+
+This can be seen in index.js
