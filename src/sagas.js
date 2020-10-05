@@ -10,16 +10,16 @@ export function* helloSaga() {
 }
 function getFetchData() {
   // does not need to be a generator function
-  fetch('https://randomuser.me/api/?results=1')
+  fetch('https://randomuser.me/api/?results=3&?nat=gb')
     .then(res => {
       console.log(res);
       return res.json();
     })
-    .then(data => console.log(data));
+    .then(data => console.log(data.results[0].name.first));
 }
 
 function* incrementAsync() {
-  yield delay(2000);
+  yield delay(500);
   yield put({ type: 'INCREMENT' });
   try {
     const data = yield call(getFetchData);
