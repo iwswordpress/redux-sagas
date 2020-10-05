@@ -8,8 +8,8 @@ export default function counter(state = 0, action) {
       return state - 1;
     case 'FETCH_SUCCEEDED':
       console.log('[REDUCER] FETCH_SUCCEEDED');
-      console.log('ACTION: ', action);
-      console.log('PAYLOAD: ', action.payload);
+      console.log('[REDUCER] ACTION: ', action.type);
+      console.log('[REDUCER] PAYLOAD: ', action.payload);
       return state;
     case 'FETCH_FAILED':
       console.log('[REDUCER] FETCH_FAILED');
