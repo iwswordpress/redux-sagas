@@ -8,22 +8,19 @@ export function* helloSaga() {
     'We can set up more functionaility here as this runs on INIT rather than having a watcher.'
   );
 }
-function getFetchData() {
+async function getFetchData() {
   // does not need to be a generator function
-  fetch('https://randomuser.me/api/?results=3&?nat=gb')
-    .then(res => {
-      console.log(res);
-      return res.json();
-    })
-    .then(data => console.log(data.results[0].name.first));
+  const result = await fetch('https://randomuser.me/api/?results=3&?nat=gb');
+  const users = result.json();
+  return users;
 }
 
 function* incrementAsync() {
-  yield delay(500);
   yield put({ type: 'INCREMENT' });
   try {
     const data = yield call(getFetchData);
-    yield put({ type: 'FETCH_SUCCEEDED', data });
+    console.log('data', data);
+    yield put({ type: 'FETCH_SUCCEEDED', payload: data });
   } catch (error) {
     yield put({ type: 'FETCH_FAILED', error });
   }
