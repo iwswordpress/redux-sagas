@@ -1,9 +1,3 @@
-This lessons gets us to have an ASYNC counter button.
+In this lesson we use the randomuser api to get users.
 
-The rootSaga is implemented.
-
-When we click the Increment after 1 second button an action of 'INCREMENT_ASYNC' is disptachted using the action() method.
-
-The saga has a watchIncrementAsync that 'listens' for this action and when it hears it fires the generator function watchIncrementAsync.
-
-This is our base wiring for sagas.
+We set up our saga to listen for INCREMENT_ASYNC where we have added the getFetchData request to the asyn counter button.
