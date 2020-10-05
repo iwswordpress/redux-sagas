@@ -16,7 +16,7 @@ async function getFetchData() {
   return users;
 }
 function* incrementAsync() {
-  yield delay(2000);
+  // yield delay(2000);
   yield put({ type: 'INCREMENT' });
   try {
     const data = yield call(getFetchData);
