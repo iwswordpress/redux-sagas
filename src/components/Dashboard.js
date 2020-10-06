@@ -1,6 +1,6 @@
 import React from 'react';
 import User from './User';
-const Counter = ({
+const Dashboard = ({
   value,
   users,
   onDecrementAsync,
@@ -38,4 +38,4 @@ const Counter = ({
   </div>
 );
 
-export default Counter;
+export default Dashboard;
