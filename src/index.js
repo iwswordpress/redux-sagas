@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import './index.css';
-import Dashboard from './Dashboard';
+import Dashboard from './components/Dashboard';
 import counterReducer from './store/counter';
 import usersReducer from './store/users';
 import authReducer from './store/auth';
@@ -10,7 +10,7 @@ import authReducer from './store/auth';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 // ...
-import rootSaga from './sagas';
+import rootSaga from './sagas/sagas';
 
 const rootReducer = combineReducers({
   counterValue: counterReducer,

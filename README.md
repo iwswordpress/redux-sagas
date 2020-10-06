@@ -2,4 +2,8 @@
 
 Added auth reducer and store slice.
 
-Added LOGIN/LOGOUT buttons and display status with some styling
+Added LOGIN/LOGOUT buttons and display status with some styling.
+
+Restructure app with folders for components, sagas, etc...
+
+Render users as cards.

@@ -1,5 +1,5 @@
 import { put, takeEvery, all, call, select, take } from 'redux-saga/effects';
-import * as actions from './store/actions';
+import * as actions from '../store/actions';
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
 // This fires on start as this saga is in watch list below in yield all
