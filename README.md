@@ -12,4 +12,6 @@ We use combineReducers in index.js
 
 We also ouput users as JSON.stringify for debug rather than presentation.
 
-This covers tsection 3.1 with 'Pulling future actions'
+This covers tsection 3.1 with 'Pulling future actions'.
+
+We have limited the data back from randomuser as well.

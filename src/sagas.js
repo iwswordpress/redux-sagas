@@ -10,7 +10,9 @@ export function* helloSaga() {
 }
 async function getFetchData() {
   // does not need to be a generator function
-  const result = await fetch('https://randomuser.me/api/?results=3&?nat=gb');
+  const result = await fetch(
+    'https://randomuser.me/api/?results=3&?nat=gb&inc=name,email, location'
+  );
   console.log(result);
   const users = result.json();
   return users;
