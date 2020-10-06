@@ -2,4 +2,4 @@
 
 Added auth reducer and store slice.
 
-Added LOGIN/LOGOUT buttons and display status with some stying
+Added LOGIN/LOGOUT buttons and display status with some styling
