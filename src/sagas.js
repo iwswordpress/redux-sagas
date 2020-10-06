@@ -27,8 +27,8 @@ function* decrementAsync() {
 function* getUsersAsync() {
   try {
     const data = yield call(getFetchData);
-    console.log('data', data);
-    yield put({ type: 'FETCH_SUCCEEDED', payload: data });
+    console.log('data', data.results);
+    yield put({ type: 'FETCH_SUCCEEDED', payload: data.results });
   } catch (error) {
     yield put({ type: 'FETCH_FAILED', error });
   }

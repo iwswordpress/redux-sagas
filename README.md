@@ -1,9 +1,7 @@
-3.1
+3.2
 
-We use the example from 3.1 and add the watchAndLog() saga watcher.
+The store is now set up to have a counter slice and a users slice which is an array.
 
-To activate it we must put it in the rootSaga array.
+We load the stoe with the counter and the users.
 
-We do the same for the loop of 3 todos but replace todos with increment counter and add a case in reducer for SHOW_CONGRATULATION.
-
-The final example of Login/Logout is covered in 3.2 as it is just initially mentioned here.
+In the previous lessons the payload from randomuser.me had boitht the results and info arrays. This has been amended so that the users stor =e has just an array of users.
