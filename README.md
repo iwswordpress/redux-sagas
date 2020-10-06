@@ -1,16 +1,9 @@
-3
+3.1
 
-We will install Redux Dev Tools
+We use the example from 3.1 and add the watchAndLog() saga watcher.
 
-Add Redux Dev Tools Chrome extension https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en or search for Chrome Redux Dev Tools extension
+To activate it we must put it in the rootSaga array.
 
-1. npm install -D redux-devtools-extension
-2. add import { composeWithDevTools } from 'redux-devtools-extension';
-3. Replace const store = ... with
-   const store = createStore(reducer,composeWithDevTools(applyMiddleware(sagaMiddleware)));
+We do the same for the loop of 3 todos but replace todos with increment counter and add a case in reducer for SHOW_CONGRATULATION.
 
-This can be seen in index.js
-
-We also change all buttons to ASYNC in sagas with their own watcher sagas.
-
-This sets us up for chapter 3.
+The final example of Login/Logout is covered in 3.2 as it is just initially mentioned here.

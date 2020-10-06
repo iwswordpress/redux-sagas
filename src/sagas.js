@@ -1,4 +1,4 @@
-import { put, takeEvery, all, call } from 'redux-saga/effects';
+import { put, takeEvery, all, call, select, take } from 'redux-saga/effects';
 
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
@@ -40,8 +40,30 @@ function* watchIncrementAsync() {
   yield takeEvery('GET_USERS_ASYNC', getUsersAsync);
 }
 
+function* watchAndLog() {
+  while (true) {
+    const action = yield take('*');
+    const state = yield select();
+
+    console.log('action', action);
+    console.log('state after', state);
+  }
+}
+
+function* watchFirstThreeTodosCreation() {
+  for (let i = 0; i < 3; i++) {
+    const action = yield take('INCREMENT_ASYNC');
+    // yield take('INCREMENT_ASYNC'); This works too.
+  }
+  yield put({ type: 'SHOW_CONGRATULATION' });
+}
 // notice how we now only export the rootSaga
 // single entry point to start all Sagas at once
 export default function* rootSaga() {
-  yield all([helloSaga(), watchIncrementAsync()]);
+  yield all([
+    helloSaga(),
+    watchIncrementAsync(),
+    watchAndLog(),
+    watchFirstThreeTodosCreation()
+  ]);
 }
