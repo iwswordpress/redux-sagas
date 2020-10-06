@@ -6,8 +6,16 @@ const initialState = {
 export default function auth(state = initialState, action) {
   switch (action.type) {
     case actions.LOGIN:
-      return { ...state, loggedIn: true };
+      console.log('Logging in...set loader...');
+      return { ...state };
     case actions.LOGOUT:
+      console.log('Logging out...stop loader');
+      return { ...state };
+    case actions.ASYNC_LOGIN:
+      console.log('Logged IN');
+      return { ...state, loggedIn: true };
+    case actions.ASYNC_LOGOUT:
+      console.log('Logged OUT');
       return { ...state, loggedIn: false };
     default:
       return state;

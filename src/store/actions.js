@@ -1,7 +1,12 @@
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
+export const INCREMENT_ASYNC = 'INCREMENT_ASYNC';
+export const DECREMENT_ASYNC = 'DECREMENT_ASYNC';
 export const SHOW_CONGRATULATION = 'SHOW_CONGRATULATION';
 export const FETCH_SUCCEEDED = 'FETCH_SUCCEEDED';
 export const FETCH_FAILED = 'FETCH_FAILED';
 export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';
+export const ASYNC_LOGIN = 'ASYNC_LOGIN';
+export const ASYNC_LOGOUT = 'ASYNC_LOGOUT';
+export const GET_USERS_ASYNC = 'GET_USERS_ASYNC';
