@@ -2,11 +2,17 @@
   font-family: 'Open Sans', sans-serif;
   font-size: 22px;
 }
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
 .container {
   margin-top: 50px;
   max-width: 900px;
-  display: flex;
-  justify-content: center;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  padding: 20px;
+  min-height: 700px;
 }
 button {
   cursor: pointer;

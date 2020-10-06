@@ -32,18 +32,20 @@ console.log(store.getState());
 // end
 function render() {
   ReactDOM.render(
-    <div className='container'>
-      <Dashboard
-        value={store.getState().counterValue.counter}
-        prize={store.getState().counterValue.prize}
-        users={store.getState().users.users}
-        loggedIn={store.getState().auth.loggedIn}
-        onDecrementAsync={() => action('DECREMENT_ASYNC')}
-        onIncrementAsync={() => action('INCREMENT_ASYNC')}
-        onGetUsers={() => action('GET_USERS_ASYNC')}
-        onLogIn={() => action('LOGIN')}
-        onLogOut={() => action('LOGOUT')}
-      />
+    <div className='wrapper'>
+      <div className='container'>
+        <Dashboard
+          value={store.getState().counterValue.counter}
+          prize={store.getState().counterValue.prize}
+          users={store.getState().users.users}
+          loggedIn={store.getState().auth.loggedIn}
+          onDecrementAsync={() => action('DECREMENT_ASYNC')}
+          onIncrementAsync={() => action('INCREMENT_ASYNC')}
+          onGetUsers={() => action('GET_USERS_ASYNC')}
+          onLogIn={() => action('LOGIN')}
+          onLogOut={() => action('LOGOUT')}
+        />
+      </div>
     </div>,
     document.getElementById('root')
   );
