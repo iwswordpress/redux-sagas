@@ -38,12 +38,6 @@ function* getUsersAsync() {
     yield put({ type: 'FETCH_FAILED', error });
   }
 }
-// WATCHER sagas. They are like event listenders that listend for every (takeEvery) instance of the actions emitted and the run the 'callback'
-function* watchIncrementAsync() {
-  yield takeEvery(actions.INCREMENT_ASYNC, incrementAsync);
-  yield takeEvery(actions.DECREMENT_ASYNC, decrementAsync);
-  yield takeEvery(actions.GET_USERS_ASYNC, getUsersAsync);
-}
 
 function* logInAsync() {
   yield put({ type: actions.ASYNC_LOGIN });
@@ -51,6 +45,13 @@ function* logInAsync() {
 
 function* logOutAsync() {
   yield put({ type: actions.ASYNC_LOGOUT });
+}
+
+// WATCHER sagas. They are like event listenders that listend for every (takeEvery) instance of the actions emitted and the run the 'callback'
+function* watchIncrementAsync() {
+  yield takeEvery(actions.INCREMENT_ASYNC, incrementAsync);
+  yield takeEvery(actions.DECREMENT_ASYNC, decrementAsync);
+  yield takeEvery(actions.GET_USERS_ASYNC, getUsersAsync);
 }
 function* watchLoginLogoutAsync() {
   yield takeEvery(actions.LOGIN, logInAsync);
