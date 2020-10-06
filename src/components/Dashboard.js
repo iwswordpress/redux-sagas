@@ -27,9 +27,17 @@ const Dashboard = ({
       <span className={loggedIn ? 'auth' : 'not-auth'}>
         {loggedIn ? 'LoggedIn' : 'LoggedOut'}
       </span>
-    </div>
-    <div style={{ maxWidth: '600px', wordBreak: 'break-all' }}>
+      <br />
       Users:
+    </div>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}
+    >
       {users.map(user => (
         <User username={user.name.first} user={user} key={Math.random()} />
       ))}

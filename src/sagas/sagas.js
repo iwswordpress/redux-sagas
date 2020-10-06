@@ -14,7 +14,7 @@ export function* helloSaga() {
 async function getFetchData() {
   // does not need to be a generator function
   const result = await fetch(
-    'https://randomuser.me/api/?results=3&?nat=gb&inc=name,email,location'
+    'https://randomuser.me/api/?results=3&inc=name,email,location&nat=us,dk,fr,gb'
   );
   console.log(result);
   const users = result.json();
