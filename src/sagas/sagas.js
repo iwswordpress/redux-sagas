@@ -14,7 +14,7 @@ export function* helloSaga() {
 async function getFetchData() {
   // does not need to be a generator function
   const result = await fetch(
-    'https://randomuser.me/api/?results=3&?nat=gb&inc=name,email, location'
+    'https://randomuser.me/api/?results=3&?nat=gb&inc=name,email,location'
   );
   console.log(result);
   const users = result.json();
@@ -40,11 +40,17 @@ function* getUsersAsync() {
 }
 
 function* logInAsync() {
-  yield put({ type: actions.ASYNC_LOGIN });
+  console.log('[saga.js]: logInAsync - heard LOGIN');
+  try {
+    yield put({ type: actions.LOGIN_SUCCESS });
+  } catch {
+    yield put({ type: actions.LOGIN_ERROR });
+  }
 }
 
 function* logOutAsync() {
-  yield put({ type: actions.ASYNC_LOGOUT });
+  console.log('[saga.js]: logOutAsync  - heard LOGOUT');
+  yield put({ type: actions.LOGOUT_SUCCESS });
 }
 
 // WATCHER sagas. They are like event listenders that listend for every (takeEvery) instance of the actions emitted and the run the 'callback'
@@ -85,7 +91,7 @@ export default function* rootSaga() {
   yield all([
     helloSaga(),
     watchIncrementAsync(),
-    watchAndLog(),
+    //watchAndLog(),
     watchFirstThreeTodosCreation(),
     watchLoginLogoutAsync()
   ]);
