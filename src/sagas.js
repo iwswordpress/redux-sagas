@@ -18,6 +18,13 @@ async function getFetchData() {
 function* incrementAsync() {
   // yield delay(2000);
   yield put({ type: 'INCREMENT' });
+}
+function* decrementAsync() {
+  // yield delay(2000);
+  yield put({ type: 'INCREMENT' });
+}
+
+function* getUsersAsync() {
   try {
     const data = yield call(getFetchData);
     console.log('data', data);
@@ -29,6 +36,8 @@ function* incrementAsync() {
 
 function* watchIncrementAsync() {
   yield takeEvery('INCREMENT_ASYNC', incrementAsync);
+  yield takeEvery('DECREMENT_ASYNC', decrementAsync);
+  yield takeEvery('GET_USERS_ASYNC', getUsersAsync);
 }
 
 // notice how we now only export the rootSaga

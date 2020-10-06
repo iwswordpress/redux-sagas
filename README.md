@@ -10,3 +10,7 @@ Add Redux Dev Tools Chrome extension https://chrome.google.com/webstore/detail/r
    const store = createStore(reducer,composeWithDevTools(applyMiddleware(sagaMiddleware)));
 
 This can be seen in index.js
+
+We also change all buttons to ASYNC in sagas with their own watcher sagas.
+
+This sets us up for chapter 3.

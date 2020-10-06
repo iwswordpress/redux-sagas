@@ -1,9 +1,9 @@
 import React from 'react';
-const Counter = ({ value, onIncrement, onDecrement, onIncrementAsync }) => (
+const Counter = ({ value, onDecrementAsync, onGetUsers, onIncrementAsync }) => (
   <div>
-    <button onClick={onIncrement}>Increment</button>{' '}
-    <button onClick={onDecrement}>Decrement</button>{' '}
-    <button onClick={onIncrementAsync}>GET USERS</button>
+    <button onClick={onDecrementAsync}>Increment</button>{' '}
+    <button onClick={onIncrementAsync}>Decrement</button>{' '}
+    <button onClick={onGetUsers}>GET USERS</button>
     <hr />
     <div>Clicked: {value} times</div>
   </div>

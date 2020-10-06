@@ -28,9 +28,9 @@ function render() {
     <div className='container'>
       <Counter
         value={store.getState()}
-        onIncrement={() => action('INCREMENT')}
-        onDecrement={() => action('DECREMENT')}
+        onDecrementAsync={() => action('DECREMENT_ASYNC')}
         onIncrementAsync={() => action('INCREMENT_ASYNC')}
+        onGetUsers={() => action('GET_USERS_ASYNC')}
       />
     </div>,
     document.getElementById('root')
