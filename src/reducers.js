@@ -7,7 +7,7 @@ export default function counter(state = 0, action) {
     case 'DECREMENT':
       return state - 1;
     case 'SHOW_CONGRATULATION':
-      console.log('WELL DONE!');
+      console.log('WELL DONE! 3 INCREMENTS');
       return state;
     case 'FETCH_SUCCEEDED':
       console.log('[REDUCER] FETCH_SUCCEEDED');
