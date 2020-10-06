@@ -21,7 +21,7 @@ function* incrementAsync() {
 }
 function* decrementAsync() {
   // yield delay(2000);
-  yield put({ type: 'INCREMENT' });
+  yield put({ type: 'DECREMENT' });
 }
 
 function* getUsersAsync() {
