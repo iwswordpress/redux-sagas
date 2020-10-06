@@ -36,7 +36,7 @@ function render() {
       <Dashboard
         value={store.getState().counterValue.counter}
         prize={store.getState().counterValue.prize}
-        users={store.getState().users.users[0]}
+        users={store.getState().users.users}
         loggedIn={store.getState().auth.loggedIn}
         onDecrementAsync={() => action('DECREMENT_ASYNC')}
         onIncrementAsync={() => action('INCREMENT_ASYNC')}

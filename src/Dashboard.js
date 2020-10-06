@@ -1,4 +1,5 @@
 import React from 'react';
+import User from './User';
 const Counter = ({
   value,
   users,
@@ -28,8 +29,12 @@ const Counter = ({
       </span>
     </div>
     <div style={{ maxWidth: '600px', wordBreak: 'break-all' }}>
-      Users: {JSON.stringify(users)}
+      Users:
+      {users.map(user => (
+        <User username={user.name.first} user={user} key={Math.random()} />
+      ))}
     </div>
+    <div />
   </div>
 );
 
