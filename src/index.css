@@ -11,3 +11,11 @@
 button {
   cursor: pointer;
 }
+.auth {
+  color: green;
+  font-weight: bold;
+}
+.not-auth {
+  color: red;
+  font-weight: bold;
+}
