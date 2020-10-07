@@ -12,8 +12,8 @@ const Dashboard = ({
   loggedIn
 }) => (
   <div>
-    <button onClick={onIncrementAsync}>ASYNC Increment</button>{' '}
-    <button onClick={onDecrementAsync}>ASYNC Decrement</button>{' '}
+    <button onClick={onIncrementAsync}>BUY STOCK AAA</button>{' '}
+    <button onClick={onDecrementAsync}>SELL STOCK AAA</button>{' '}
     <button onClick={onGetUsers}>ASYNC GET USERS</button>{' '}
     <button onClick={onLogIn}>LOGIN</button>{' '}
     <button onClick={onLogOut}>LOGOUT</button>
