@@ -19,8 +19,12 @@ const Dashboard = ({
     <button onClick={onLogOut}>LOGOUT</button>
     <hr />
     <div>
-      Clicked: {value} times{' '}
-      {prize && <span style={{ color: 'red' }}>PRIZE</span>}
+      Stock Qty: {value}{' '}
+      {prize && (
+        <span style={{ color: 'red' }}>
+          STOCK SPLIT BONUS - we add 3 units to your account.
+        </span>
+      )}
     </div>
     <div>
       AuthStatus:{' '}

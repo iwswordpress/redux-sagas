@@ -13,7 +13,7 @@ export default function counter(state = initialState, action) {
       return { ...state, counter: state.counter - 1, prize: false };
     case actions.SHOW_CONGRATULATION:
       console.log('WELL DONE! 3 INCREMENTS');
-      return { ...state, prize: true };
+      return { ...state, counter: state.counter + 3, prize: true };
     default:
       return state;
   }
