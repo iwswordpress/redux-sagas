@@ -1,5 +1,6 @@
 import { put, takeEvery, all, call, select, take } from 'redux-saga/effects';
 import * as actions from '../store/actions';
+import watchAndLog from './logSaga';
 
 // As per docs there is a delay helper in redux-saga/effects but it seems it is not exported when included hence a util function here
 const delay = ms => new Promise(res => setTimeout(res, ms));
@@ -71,16 +72,6 @@ function* watchIncrementAsync() {
 function* watchLoginLogoutAsync() {
   yield takeEvery(actions.LOGIN, logInAsync);
   yield takeEvery(actions.LOGOUT, logOutAsync);
-}
-// LOGGER
-function* watchAndLog() {
-  while (true) {
-    const action = yield take('*'); // listend for all actions
-    const state = yield select(); // get state
-
-    console.log('action', action);
-    console.log('state after', state);
-  }
 }
 
 // STOCK SPLIT
