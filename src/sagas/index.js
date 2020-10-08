@@ -15,6 +15,8 @@ export function* helloSaga() {
 }
 // ----------------------- WORKER SAGAS ------------------------------------
 // These are WORKER sagas that are called by WATCHER sagas
+
+// USERS
 async function getFetchData() {
   // does not need to be a generator function
   const result = await fetch(
@@ -35,6 +37,7 @@ function* getUsersAsync() {
   }
 }
 
+// LOGIN/LOGOUT
 function* logInAsync() {
   console.log('[saga.js]: logInAsync - heard LOGIN');
   try {
@@ -48,7 +51,7 @@ function* logOutAsync() {
   console.log('[saga.js]: logOutAsync  - heard LOGOUT');
   yield put({ type: actions.LOGOUT_SUCCESS });
 }
-
+// COUNTER
 function* incrementAsync() {
   // yield delay(2000);
   yield put({ type: 'INCREMENT' });
@@ -57,6 +60,7 @@ function* decrementAsync() {
   // yield delay(2000);
   yield put({ type: 'DECREMENT' });
 }
+
 // ------------------ WATCHER SAGAS ------------------------------------
 // WATCHER sagas. They are like event listenders that listend for every (takeEvery) instance of the actions emitted and the run the 'callback'
 function* watchIncrementAsync() {
@@ -68,6 +72,7 @@ function* watchLoginLogoutAsync() {
   yield takeEvery(actions.LOGIN, logInAsync);
   yield takeEvery(actions.LOGOUT, logOutAsync);
 }
+// LOGGER
 function* watchAndLog() {
   while (true) {
     const action = yield take('*'); // listend for all actions
@@ -77,6 +82,8 @@ function* watchAndLog() {
     console.log('state after', state);
   }
 }
+
+// STOCK SPLIT
 // once three INCREMENT_ASYNC occur, this watcher will fire the
 // SHOW_CONGRATUTLATIOINS.
 // It is run just onec not every three INCREMENT_ASYNC
@@ -90,7 +97,7 @@ function* watchFirstThreeTodosCreation() {
 
 // notice how we now only export the rootSaga
 // single entry point to start all Sagas at once
-// to activate watchers, tehy must be put in here. If you forget to put
+// to activate watchers, they must be put in here. If you forget to put
 // them here they will not activate.
 export default function* rootSaga() {
   yield all([
