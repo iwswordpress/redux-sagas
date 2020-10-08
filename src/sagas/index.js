@@ -29,10 +29,10 @@ export function* helloSaga() {
 export default function* rootSaga() {
   yield all([
     helloSaga(),
-    watchIncrementAsync(),
-    watchAndLog(),
-    watchFirstThreeTodosCreation(),
-    watchLoginLogoutAsync(),
-    watchGetUsers()
+    watchIncrementAsync(), // in counterSaga
+    watchAndLog(), // in logSaga
+    watchFirstThreeTodosCreation(), // in threeBuysSaga
+    watchLoginLogoutAsync(), // in authSaga
+    watchGetUsers() // in userSaga
   ]);
 }
