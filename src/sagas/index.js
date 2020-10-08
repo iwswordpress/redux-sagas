@@ -13,7 +13,7 @@ export function* helloSaga() {
     'We can set up more functionaility here as this runs on INIT rather than having a watcher.'
   );
 }
-
+// ----------------------- WORKER SAGAS ------------------------------------
 // These are WORKER sagas that are called by WATCHER sagas
 async function getFetchData() {
   // does not need to be a generator function
@@ -56,7 +56,7 @@ function* logOutAsync() {
   console.log('[saga.js]: logOutAsync  - heard LOGOUT');
   yield put({ type: actions.LOGOUT_SUCCESS });
 }
-
+// ------------------ WATCHER SAGAS ------------------------------------
 // WATCHER sagas. They are like event listenders that listend for every (takeEvery) instance of the actions emitted and the run the 'callback'
 function* watchIncrementAsync() {
   yield takeEvery(actions.INCREMENT_ASYNC, incrementAsync);
