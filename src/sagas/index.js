@@ -24,14 +24,6 @@ async function getFetchData() {
   const users = result.json();
   return users;
 }
-function* incrementAsync() {
-  // yield delay(2000);
-  yield put({ type: 'INCREMENT' });
-}
-function* decrementAsync() {
-  // yield delay(2000);
-  yield put({ type: 'DECREMENT' });
-}
 
 function* getUsersAsync() {
   try {
@@ -55,6 +47,15 @@ function* logInAsync() {
 function* logOutAsync() {
   console.log('[saga.js]: logOutAsync  - heard LOGOUT');
   yield put({ type: actions.LOGOUT_SUCCESS });
+}
+
+function* incrementAsync() {
+  // yield delay(2000);
+  yield put({ type: 'INCREMENT' });
+}
+function* decrementAsync() {
+  // yield delay(2000);
+  yield put({ type: 'DECREMENT' });
 }
 // ------------------ WATCHER SAGAS ------------------------------------
 // WATCHER sagas. They are like event listenders that listend for every (takeEvery) instance of the actions emitted and the run the 'callback'
