@@ -24,6 +24,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "json-server": "^0.16.2",
     "redux-devtools-extension": "^2.13.8"
   }
 }
