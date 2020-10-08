@@ -10,7 +10,7 @@ import authReducer from './store/auth';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 // ...
-import rootSaga from './sagas/sagas';
+import rootSaga from './sagas/';
 
 const rootReducer = combineReducers({
   counterValue: counterReducer,
