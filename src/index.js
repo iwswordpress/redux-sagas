@@ -9,9 +9,7 @@ import Dashboard from './components/Dashboard';
 import counterReducer from './store/counter';
 import usersReducer from './store/users';
 import authReducer from './store/auth';
-// add as per 1.1
-import { createStore, applyMiddleware, combineReducers } from 'redux';
-import createSagaMiddleware from 'redux-saga';
+
 // ...
 import rootSaga from './sagas/';
 
